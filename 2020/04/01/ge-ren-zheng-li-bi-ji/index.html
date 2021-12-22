@@ -471,14 +471,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -531,6 +531,15 @@ filterArr(arr, name) {
     }
     return newArray;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="截取字符串，默认显示前30"><a href="#截取字符串，默认显示前30" class="headerlink" title="截取字符串，默认显示前30"></a>截取字符串，默认显示前30</h2><pre class="line-numbers language-none"><code class="language-none">m_substr() {
+  return function(str = '', len = 30, start = 0) {
+    if (str.length &gt; len) {
+      return str.substr(start, len) + '...'
+    }
+    return str
+  }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><pre class="line-numbers language-none"><code class="language-none">this.item2.sort(function (a, b) {
     var x = 'shopSort'//要排序字段
@@ -806,6 +815,27 @@ shareM(id){
     this.$message.error(err.message)
     })
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="axios请求方法"><a href="#axios请求方法" class="headerlink" title="axios请求方法"></a>axios请求方法</h2><pre class="line-numbers language-none"><code class="language-none">import axios from 'axios'
+import md5 from 'js-md5'
+import {sCode, lCode, secret_key } from '@/utils/config'
+
+axios({
+  method: "post",
+  url: this.baseURL + "/api-user/api/user/account/pwdUpdate",
+  data: {data:this.form,uToken:this.uTokenTime},
+  headers: {
+    'aToken': md5(md5(secret_key + this.uTokenTime).toUpperCase()),
+    'lCode': lCode,
+    'sCode': sCode
+  }
+  }).then((res) =&gt; {
+    // const data = res.data
+    this.isShow = false
+    console.log(res,'打印res');
+  }, err =&gt; {
+    this.$message.error(err.message)
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
