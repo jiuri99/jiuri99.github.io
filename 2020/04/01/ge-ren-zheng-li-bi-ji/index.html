@@ -501,7 +501,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="代码笔记"><a href="#代码笔记" class="headerlink" title="代码笔记"></a>代码笔记</h1><h2 id="密码显示部分数字"><a href="#密码显示部分数字" class="headerlink" title="密码显示部分数字"></a>密码显示部分数字</h2><pre class="line-numbers language-none"><code class="language-none">&lt;template v-slot="{row}"&gt;
+                <h1 id="代码笔记"><a href="#代码笔记" class="headerlink" title="代码笔记"></a>代码笔记</h1><h2 id="强制刷新视图层"><a href="#强制刷新视图层" class="headerlink" title="强制刷新视图层"></a>强制刷新视图层</h2><pre class="line-numbers language-none"><code class="language-none">//数据刷新了，但是视图没有刷新  刷新视图层
+this.$forceUpdate();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="密码显示部分数字"><a href="#密码显示部分数字" class="headerlink" title="密码显示部分数字"></a>密码显示部分数字</h2><pre class="line-numbers language-none"><code class="language-none">&lt;template v-slot="{row}"&gt;
 	{{getBankNo(row.bankCardNo(银行卡号/身份证等))}}
 &lt;/template&gt;
 computed:
