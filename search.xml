@@ -216,6 +216,35 @@
     </entry>
     
     
+    
+    <entry>
+      <title>小程序开发笔记</title>
+      <link href="2020/04/01/xiao-cheng-xu-kai-fa-bi-ji/"/>
+      <url>2020/04/01/xiao-cheng-xu-kai-fa-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="小程序分享功能"><a href="#小程序分享功能" class="headerlink" title="小程序分享功能"></a>小程序分享功能</h2><pre class="line-numbers language-none"><code class="language-none">用户点击页面内转发按钮（&lt;button&gt; 组件 open-type="share"）或右上角菜单“转发”按钮的行为，并自定义转发内容。 onShareAppMessage: function (res) {  if (res.from === 'button') {    // 来自页面内转发按钮    console.log(res.target)  } else {    // 来自菜单栏转发按钮    console.log(res.target)  }  return {    title: '自定义转发标题',    path: '/page/user?id=123',    // 设置转发的图片    imageUrl: '../../images/1.jpg',    // 成功的回调    success: (res) =&gt; {},    // 失败的回调    fail: (res) =&gt; {},    // 无论成功与否的回调    complete: (res) =&gt; {}  }}// 小程序点击胶囊按钮分享好友onShareAppMessage(e) {  let path = "/pagesMy2/pages/dealer-center/preview-shop?franchiserUserId=" + this.franchiserUserId  return {    title: this.storeData.storeName,    path: path,    imageUrl: this.storeData.storeLogo  }},// 小程序点击胶囊按钮分享朋友圈onShareTimeline(res) {  let path = "/pagesMy2/pages/dealer-center/preview-shop?franchiserUserId=" + this.franchiserUserId  return {    title: this.storeData.storeName,    path: path,    imageUrl: this.storeData.storeLogo  }},// 小程序点击胶囊按钮收藏onAddToFavorites(res) {  let path = "/pagesMy2/pages/dealer-center/preview-shop?franchiserUserId=" + this.franchiserUserId  return {    title: this.storeData.storeName,    path: path,    imageUrl: this.storeData.storeLogo  }},//小程序的原生菜单中隐藏分享按钮uni.hideShareMenu//小程序的原生菜单中显示分享按钮uni.showShareMenu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="小程序下拉刷新功能"><a href="#小程序下拉刷新功能" class="headerlink" title="小程序下拉刷新功能"></a>小程序下拉刷新功能</h2><pre class="line-numbers language-none"><code class="language-none">"enablePullDownRefresh": true  //pages.json style里写上//页面的onPullDownRefresh就可以使用了onPullDownRefresh() {  //下拉获取数据},<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人整理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
