@@ -458,7 +458,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.1k
                 </div>
                 
 
@@ -650,6 +650,14 @@ dateFormat(date, formatStr) {
   phone = phone &amp;&amp; phone.length === 11 ? phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2') : phone;
   return phone;
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h4><pre class="line-numbers language-none"><code class="language-none">function rand(m,n){
+  return Math.ceil(Math.random() * (n-m+1)) + m-1;
+}
+
+//1-100生成随机数
+使用：rand(1,100)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="校验手机号"><a href="#校验手机号" class="headerlink" title="校验手机号"></a>校验手机号</h4><pre class="line-numbers language-none"><code class="language-none">isPhone(phone) {
   if (!/^1[3456789]\d{9}$/.test(phone)) {
