@@ -1,0 +1,124 @@
+/**
+ * 留言板内容板块 - 网格卡片布局
+ * 按「效果预览」式卡片排列，左上角/右上角标签 + 中间内容区
+ * 后续可在此文件继续扩展样式
+ */
+
+/* ---------- 留言板标题（纯 CSS 效果） ---------- */
+.guestbook-title {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    background: linear-gradient(90deg, #42b983 0%, #35495e 50%, #42b983 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.1em;
+}
+
+.guestbook-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 0.5rem auto 0;
+    background: linear-gradient(90deg, transparent, #42b983, transparent);
+    border-radius: 2px;
+}
+
+/* ---------- 网格容器 ---------- */
+.guestbook-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media screen and (max-width: 992px) {
+    .guestbook-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .guestbook-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ---------- 单张卡片 ---------- */
+.guestbook-card {
+    position: relative;
+    min-height: 200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: box-shadow 0.25s ease;
+}
+
+.guestbook-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 左上角标签：效果预览 */
+.guestbook-card__label--left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom-right-radius: 6px;
+    z-index: 2;
+}
+
+/* 右上角标签：查看源码（可改为链接） */
+.guestbook-card__label--right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom-left-radius: 6px;
+    z-index: 2;
+}
+
+.guestbook-card__label--right a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.guestbook-card__label--right a:hover {
+    text-decoration: underline;
+}
+
+/* 卡片主体内容区（后续在此填充内容） */
+.guestbook-card__body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    padding: 2.5rem 1rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 空卡片占位提示（有内容时可移除或隐藏） */
+.guestbook-card__body:empty::after {
+    content: "待添加内容";
+    font-size: 0.9rem;
+    color: #bbb;
+}
