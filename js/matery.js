@@ -138,7 +138,7 @@ $(function () {
     function showOrHideNavBg(position) {
         let showPosition = 100;
         if (position < showPosition) {
-            $nav.removeClass('nav-transparent');  /* 顶部也显示导航背景 */
+            $nav.addClass('nav-transparent');   /* 顶部透明，不显示导航背景 */
             $backTop.slideUp(300);
         } else {
             $nav.removeClass('nav-transparent');
