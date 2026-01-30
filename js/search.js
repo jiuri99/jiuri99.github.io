@@ -27,7 +27,7 @@ var searchFunc = function (path, search_id, content_id) {
                     var content_index = [];
                     var data_title = data.title.trim().toLowerCase();
                     var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                    var data_url = data.url;
+                    var data_url = data.url && data.url.indexOf('/') === 0 ? data.url : '/' + (data.url || '');
                     var index_title = -1;
                     var index_content = -1;
                     var first_occur = -1;
@@ -82,4 +82,11 @@ var searchFunc = function (path, search_id, content_id) {
             });
         }
     });
-}
+};
+
+// 页面加载后初始化搜索（原各页内联脚本统一到此）
+$(function () {
+    if (document.getElementById('searchInput') && document.getElementById('searchResult')) {
+        searchFunc('/search.xml', 'searchInput', 'searchResult');
+    }
+});

@@ -1,0 +1,78 @@
+/* 全站公共样式 - 原内联重复代码抽取 */
+
+/* github-emoji 样式 */
+.github-emoji {
+    position: relative;
+    display: inline-block;
+    width: 1.2em;
+    min-height: 1.2em;
+    overflow: hidden;
+    vertical-align: top;
+    color: transparent;
+}
+.github-emoji > span {
+    position: relative;
+    z-index: 10;
+}
+.github-emoji img,
+.github-emoji .fancybox {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+    user-select: none !important;
+    cursor: auto !important;
+}
+.github-emoji img {
+    height: 1.2em !important;
+    width: 1.2em !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    user-select: none !important;
+    cursor: auto !important;
+}
+.github-emoji-fallback {
+    color: inherit;
+}
+.github-emoji-fallback img {
+    opacity: 0 !important;
+}
+
+/* GitHub Corner 样式 */
+.nav-transparent .github-corner {
+    display: none !important;
+}
+.github-corner {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    border: 0;
+    transform: scale(1.1);
+}
+.github-corner svg {
+    color: #0f9d58;
+    fill: #fff;
+    height: 64px;
+    width: 64px;
+}
+.github-corner:hover .octo-arm {
+    animation: github-corner-arm 0.56s ease-in-out;
+}
+.github-corner .octo-arm {
+    animation: none;
+}
+@keyframes github-corner-arm {
+    0%, to {
+        transform: rotate(0);
+    }
+    20%, 60% {
+        transform: rotate(-25deg);
+    }
+    40%, 80% {
+        transform: rotate(10deg);
+    }
+}
